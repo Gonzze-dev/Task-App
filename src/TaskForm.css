@@ -1,0 +1,124 @@
+.PopUp
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: auto;
+    z-index: 1;
+}
+
+.TaskFormContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 228px;
+    width: 215px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2.5px 2.5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.AddTaskForm-buttonsLis
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.inputTaskTitle, .TextAreaTaskDescription, .buttonSend
+{
+    margin-top: 15px;
+}
+
+.inputTaskTitle, .TextAreaTaskDescription
+{
+    border: none;
+    width: 195px;
+    outline: 2px solid rgb(253, 253, 253);
+    font-size: 16px;
+    padding: 10px;
+}
+
+.inputTaskTitle:hover, .TextAreaTaskDescription:hover
+{
+    outline: 2px solid #5b9bee;
+    transition: outline 0.3s ease;
+}
+
+.inputTaskTitle:focus, .TextAreaTaskDescription:focus
+{
+    outline: 2px solid #176cdc;
+    transition: outline 0.3s ease;
+}
+
+.TextAreaTaskDescription{
+    height: 100px;
+    resize: none;
+}
+
+
+.TextAreaTaskDescription::-webkit-scrollbar {
+    width: 2px;
+}
+
+.TextAreaTaskDescription::-webkit-scrollbar-thumb {
+    background-color: #5b9bee;
+    border-radius: 6px;
+}
+
+.TextAreaTaskDescription::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 6px;
+}
+
+.TextAreaTaskDescription::-webkit-scrollbar-thumb:hover {
+    background-color: #176cdc;
+}
+
+.buttonSend, .buttonCamcel{
+    border: none;
+    color: white;
+    background-color: #63a5fb;
+    margin-top: 10px;
+    height: 30px;
+    width: 80px;
+    padding: 5px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.buttonCamcel
+{
+    background-color: #a8beeb;
+    margin-left: 10px;
+}
+
+.buttonCamcel:hover
+{
+    background-color: #8fa6e1;
+}
+
+.buttonCamcel:active
+{
+background-color: #758dd7;
+}
+
+.buttonSend:hover
+{
+    background-color: #518ad6;
+}
+
+.buttonSend:active
+{
+    transform: scale(0.99);
+    background-color: #176cdc;
+
+}

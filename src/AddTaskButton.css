@@ -1,0 +1,17 @@
+.AddTaskButton
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 338px;
+    border: 2px dashed  black;
+    transition: height 0.5s ease;
+    cursor: pointer;
+}
+
+.AddTaskButton:hover
+{
+    border: 2px dashed #5b9bee;
+    color: #5b9bee;
+}
