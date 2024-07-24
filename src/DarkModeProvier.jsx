@@ -11,7 +11,6 @@ const DarkModeProvier = ({children}) => {
         const modeBody = colorMode == '' ? "dark" : "ligth"
         
         document.getElementById('body').className = modeBody
-        console.log(document.getElementById('body').className)
         setColorMode(mode)
     }, [isDark])
 
