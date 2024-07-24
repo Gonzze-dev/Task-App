@@ -13,31 +13,36 @@
     z-index: 1;
 }
 
-.TaskFormContainer
+.TaskFormContainer, .TaskFormContainer-dark
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 228px;
+    height: 238px;
     width: 215px;
     background-color: white;
     padding: 10px;
     box-shadow: 2.5px 2.5px 4px rgba(0, 0, 0, 0.2);
 }
 
-.AddTaskForm-buttonsLis
-{
-    display: flex;
-    flex-direction: row;
+.TaskForm-buttonsList{
+    margin-top: 20px;
 }
 
-.inputTaskTitle, .TextAreaTaskDescription, .buttonSend
+.TaskFormContainer-dark{
+    background-color: #1C1C1C;
+}
+
+
+.inputTaskTitle, .inputTaskTitle-dark, 
+.TextAreaTaskDescription, .TextAreaTaskDescription-dark
 {
     margin-top: 15px;
 }
 
-.inputTaskTitle, .TextAreaTaskDescription
+.inputTaskTitle, .inputTaskTitle-dark,
+ .TextAreaTaskDescription, .TextAreaTaskDescription-dark
 {
     border: none;
     width: 195px;
@@ -46,43 +51,52 @@
     padding: 10px;
 }
 
-.inputTaskTitle:hover, .TextAreaTaskDescription:hover
+.inputTaskTitle-dark, .TextAreaTaskDescription-dark
+{
+    outline: 2px solid #adadad;
+}
+
+.inputTaskTitle:hover, .inputTaskTitle-dark:hover
+.TextAreaTaskDescription:hover, .TextAreaTaskDescription-dark:hover
 {
     outline: 2px solid #5b9bee;
     transition: outline 0.3s ease;
 }
 
-.inputTaskTitle:focus, .TextAreaTaskDescription:focus
+.inputTaskTitle:focus, .inputTaskTitle-dark:hover,
+.TextAreaTaskDescription:focus, .TextAreaTaskDescription-dark:focus
 {
     outline: 2px solid #176cdc;
     transition: outline 0.3s ease;
 }
 
-.TextAreaTaskDescription{
+.TextAreaTaskDescription, .TextAreaTaskDescription-dark{
     height: 100px;
     resize: none;
 }
 
 
-.TextAreaTaskDescription::-webkit-scrollbar {
+.TextAreaTaskDescription::-webkit-scrollbar, .TextAreaTaskDescription-dark::-webkit-scrollbar {
     width: 2px;
 }
 
-.TextAreaTaskDescription::-webkit-scrollbar-thumb {
+.TextAreaTaskDescription::-webkit-scrollbar-thumb, .TextAreaTaskDescription-dark::-webkit-scrollbar-thumb {
     background-color: #5b9bee;
     border-radius: 6px;
 }
 
-.TextAreaTaskDescription::-webkit-scrollbar-track {
+.TextAreaTaskDescription::-webkit-scrollbar-track, .TextAreaTaskDescription-dark::-webkit-scrollbar-track{
     background-color: white;
     border-radius: 6px;
 }
-
-.TextAreaTaskDescription::-webkit-scrollbar-thumb:hover {
+.TextAreaTaskDescription-dark::-webkit-scrollbar-track{
+    background-color: #414141;
+}
+.TextAreaTaskDescription::-webkit-scrollbar-thumb:hover, .TextAreaTaskDescription-dark::-webkit-scrollbar-thumb:hover {
     background-color: #176cdc;
 }
 
-.buttonSend, .buttonCamcel{
+.buttonSend, .buttonSend-dark,.buttonCancel, .buttonCancel-dark{
     border: none;
     color: white;
     background-color: #63a5fb;
@@ -95,28 +109,28 @@
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.buttonCamcel
+.buttonCancel, .buttonCancel-dark
 {
     background-color: #a8beeb;
     margin-left: 10px;
 }
 
-.buttonCamcel:hover
+.buttonCancel:hover, .buttonCancel-dark:hover
 {
     background-color: #8fa6e1;
 }
 
-.buttonCamcel:active
+.buttonCancel:active, .buttonCancel-dark:active
 {
 background-color: #758dd7;
 }
 
-.buttonSend:hover
+.buttonSend:hover, .buttonSend-dark:hover
 {
     background-color: #518ad6;
 }
 
-.buttonSend:active
+.buttonSend:active, .buttonSend-dark:active
 {
     transform: scale(0.99);
     background-color: #176cdc;

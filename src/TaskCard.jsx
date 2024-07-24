@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {TaskContext} from './TaskProvider'
 import './TaskCard.css'
+import { DarkModeContext } from './DarkModeProvier'
 
 const TaskCard = ({id, showTaskData, setShowTaskData}) => {
+    const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
     const {task, setTask} = useContext(TaskContext)
     const {title, description} = task[id]
     const [showForm, setShowForm] = useState(showTaskData)
@@ -10,6 +12,7 @@ const TaskCard = ({id, showTaskData, setShowTaskData}) => {
     useEffect(() =>
     {
         setShowForm(showTaskData)
+
     }, [showTaskData])
 
     const hideForm = () => setShowTaskData(false)
@@ -18,9 +21,9 @@ const TaskCard = ({id, showTaskData, setShowTaskData}) => {
         <>
             {showForm && 
             <div className='PopUp'>
-                <div className='TaskCard'>
+                <div className={`TaskCard${colorMode}`}>
                     <div className='TitleBar'>
-                        <p className='Title'>Informacion <span className='ExitButton' onClick={hideForm}>X</span></p> 
+                        <h3 className='Title'>Informacion <span className='ExitButton' onClick={hideForm}>X</span></h3> 
                     </div>
                     <div className='TaskCard-Content'>
                         <h3>{title} </h3>

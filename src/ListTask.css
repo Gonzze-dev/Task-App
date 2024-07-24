@@ -1,4 +1,4 @@
-.listTaskContainer
+.listTaskContainer, .listTaskContainer-dark
 {
     display: flex;
     flex-direction: column;
@@ -15,20 +15,30 @@
 
 }
 
-.listTaskContainer::-webkit-scrollbar {
+.listTaskContainer-dark
+{
+    background-color: #2C2C2C;
+}
+
+.listTaskContainer::-webkit-scrollbar, .listTaskContainer-dark::-webkit-scrollbar {
     width: 2px;
 }
 
-.listTaskContainer::-webkit-scrollbar-thumb {
+.listTaskContainer::-webkit-scrollbar-thumb, .listTaskContainer-dark::-webkit-scrollbar-thumb {
 background-color: #5b9bee;
 border-radius: 6px;
 }
 
-.listTaskContainer::-webkit-scrollbar-track {
+.listTaskContainer::-webkit-scrollbar-track, .listTaskContainer-dark::-webkit-scrollbar-track {
 background-color: white;
 border-radius: 6px;
 }
 
-.listTaskContainer::-webkit-scrollbar-thumb:hover {
+.listTaskContainer-dark::-webkit-scrollbar-track
+{
+    background-color: #2C2C2C;
+}
+
+.listTaskContainer::-webkit-scrollbar-thumb:hover, .listTaskContainer-dark::-webkit-scrollbar-thumb:hover {
     background-color: #176cdc;
 }

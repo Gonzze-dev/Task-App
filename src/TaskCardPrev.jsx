@@ -8,11 +8,14 @@ import okSvg from './assets/ok-v2.svg'
 import { TaskContext } from './TaskProvider'
 import EditTaskForm from './EditTaskForm'
 import TaskCard from './TaskCard'
+import { DarkModeContext } from './DarkModeProvier'
 
 const changeCheckTaskSvg = (checkTask) => checkTask ? okSvg : crossSvg
 const changeCheckTaskAlt = (checkTask) => checkTask ? 'task done button' : 'task undone button'
 
 const TaskCardPrev = ({id, title = "", taskDone=false}) => {
+    const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
+
     const [checkTask, setCheckTask] = useState(taskDone)
     const [checkTaskSvg, setCheckTaskSvg] = useState(changeCheckTaskSvg(taskDone))
     const [checkTaskAlt, setCheckTaskAlt] = useState(changeCheckTaskAlt(taskDone))
@@ -41,7 +44,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
     return (
       <>
-        <div className='TaskCardPrevContainer'>
+        <div className = {`TaskCardPrevContainer${colorMode}`}>
                 <p className='TaskCardPrevTitle' onClick={handlerShowTaskData}>{title}</p>
 
                 <div className='TaskCardPrev-ButtonList'>

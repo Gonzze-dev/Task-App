@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './TaskForm.css'
 import { TaskContext } from './TaskProvider'
+import { DarkModeContext } from './DarkModeProvier'
 
 const EditTaskForm = ({id, showEditForm, setShowEditForm}) => {
     const {task, setTask} = useContext(TaskContext)
-
+    const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
+    
     const {title: titleTask, description: descriptionTask} = task[id]
 
     const [title, setTitle] = useState(titleTask)
@@ -45,12 +47,12 @@ const EditTaskForm = ({id, showEditForm, setShowEditForm}) => {
         <>
             {showForm && 
                 <div className='PopUp'>
-                    <div className='TaskFormContainer'>
-                        <input className='inputTaskTitle' type="text" onChange={handlerTitle} value={title} placeholder='Titulo'/>
-                        <textarea className='TextAreaTaskDescription' type="text" onChange={handlerDescription} value={description} placeholder='Descripcion'/>
+                    <div className={`TaskFormContainer${colorMode}`}>
+                        <input className={`inputTaskTitle${colorMode}`} type="text" onChange={handlerTitle} value={title} placeholder='Titulo'/>
+                        <textarea className={`TextAreaTaskDescription${colorMode}`} type="text" onChange={handlerDescription} value={description} placeholder='Descripcion'/>
                         <div className='TaskForm-buttonsList'>
-                            <button className='buttonSend' onClick={addTask}>Editar</button>
-                            <button className='buttonCamcel' onClick={hideForm}>Cancelar</button>
+                            <button className={`buttonSend${colorMode}`} onClick={addTask}>Editar</button>
+                            <button className={`buttonCancel${colorMode}`} onClick={hideForm}>Cancelar</button>
                         </div>
                     </div>
                 </div>

@@ -4,13 +4,15 @@ import './ListTask.css'
 import TaskCardPrev from './TaskCardPrev'
 import AddTaskButton from './AddTaskButton'
 import { TaskContext } from './TaskProvider'
+import { DarkModeContext } from './DarkModeProvier'
 
 const ListTask = () => {
-  
+  const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
+
   const {task, setTask} = useContext(TaskContext)
 
   return (
-    <div className='listTaskContainer'>
+    <div className={`listTaskContainer${colorMode}`}>
       <AddTaskButton/>
       {task.map(({title, description, isDone}, index) => 
         <TaskCardPrev

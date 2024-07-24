@@ -1,4 +1,4 @@
-.TaskCardPrevContainer{
+.TaskCardPrevContainer, .TaskCardPrevContainer-dark{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,7 +11,12 @@
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.TaskCardPrevContainer:hover
+.TaskCardPrevContainer-dark
+{
+    background-color: #393939;
+}
+
+.TaskCardPrevContainer:hover, .TaskCardPrevContainer-dark:hover
 {
     outline: #5b9bee solid 1.5px;
     transform: scale(1.02);

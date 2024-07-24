@@ -3,9 +3,12 @@ import './AddTaskButton.css'
 
 import { TaskContext } from './TaskProvider'
 import AddTaskForm from './AddTaskForm'
+import { DarkModeContext } from './DarkModeProvier'
 
 const AddTaskButton = () => {
   const {task, setTask} = useContext(TaskContext)
+
+  const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
 
   const [showForm, setShowForm] = useState(false)
   
@@ -17,7 +20,7 @@ const AddTaskButton = () => {
 
   return (
     <>
-      <div className='AddTaskButton' style={buttonStyle} onClick={handlerShowForm}>
+      <div className={`AddTaskButton${colorMode}`} style={buttonStyle} onClick={handlerShowForm}>
         <p>+</p>
       </div>
 
