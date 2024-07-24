@@ -7,6 +7,7 @@ import deleteSvg from './assets/delete.svg'
 import okSvg from './assets/ok-v2.svg'
 import { TaskContext } from './TaskProvider'
 import EditTaskForm from './EditTaskForm'
+import TaskCard from './TaskCard'
 
 const changeCheckTaskSvg = (checkTask) => checkTask ? okSvg : crossSvg
 const changeCheckTaskAlt = (checkTask) => checkTask ? 'task done button' : 'task undone button'
@@ -17,6 +18,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     const [checkTaskAlt, setCheckTaskAlt] = useState(changeCheckTaskAlt(taskDone))
     const {task, setTask} = useContext(TaskContext)
     const [showForm, setShowForm] = useState(false)
+    const [showTaskData, setShowTaskData] = useState(false)
   
     const hanlderCheckTask = () =>
     {
@@ -35,11 +37,12 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     }
 
     const handlerShowForm = () => setShowForm(true)
+    const handlerShowTaskData = () => setShowTaskData(true)
 
     return (
       <>
         <div className='TaskCardPrevContainer'>
-                <p className='TaskCardPrevTitle'>{title}</p>
+                <p className='TaskCardPrevTitle' onClick={handlerShowTaskData}>{title}</p>
 
                 <div className='TaskCardPrev-ButtonList'>
                     <img className='TaskCardPrev-ButtonList-Button' 
@@ -52,7 +55,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
                     src={deleteSvg} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
                 </div>
           </div>
-
+        <TaskCard id={id} showTaskData={showTaskData} setShowTaskData={setShowTaskData}/>
         <EditTaskForm id={id} showEditForm={showForm} setShowEditForm={setShowForm}/>
       </>
         

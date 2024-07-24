@@ -1,16 +1,37 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import {TaskContext} from './TaskProvider'
 import './TaskCard.css'
 
-const TaskCard = ({title="", description=""}) => {
+const TaskCard = ({id, showTaskData, setShowTaskData}) => {
+    const {task, setTask} = useContext(TaskContext)
+    const {title, description} = task[id]
+    const [showForm, setShowForm] = useState(showTaskData)
+        
+    useEffect(() =>
+    {
+        setShowForm(showTaskData)
+    }, [showTaskData])
+
+    const hideForm = () => setShowTaskData(false)
 
     return (
-        <div className='TaskCard'>
-            <h2>{title}</h2>
-            <h3 className='DescriptionLabel'>Descripcion</h3>
-            <p id='description' className='description'>
-                {description}
-            </p>
-        </div>
+        <>
+            {showForm && 
+            <div className='PopUp'>
+                <div className='TaskCard'>
+                    <div className='TitleBar'>
+                        <p className='Title'>Informacion <span className='ExitButton' onClick={hideForm}>X</span></p> 
+                    </div>
+                    <div className='TaskCard-Content'>
+                        <h3>{title} </h3>
+                        <p id='description' className='description'>
+                            {description}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+        </>
     )
 }
 
