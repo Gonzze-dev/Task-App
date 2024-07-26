@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 import './App.css'
 
-import ListTask from './ListTask'
-import { TaskProvider } from './TaskProvider'
-import { DarkModeProvier } from './DarkModeProvier'
-import DarkModeButtton from './DarkModeButtton'
+import ListTask from './components/ListTask/ListTask'
+import { TaskProvider } from './providers/TaskProvider'
+import { DarkModeProvier } from './providers/DarkModeProvier'
+import DarkModeButton from './components/DarkModeButton/DarkModeButton'
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
     <>
       <DarkModeProvier>
         <TaskProvider>
-          <DarkModeButtton/>
+          <DarkModeButton/>
           <ListTask/>
         </TaskProvider>
       </DarkModeProvier>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { DarkModeContext } from './DarkModeProvier'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
-const DarkModeButtton = () => {
+const DarkModeButton = () => {
     const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
 
     const handlerSetDarkMode = () =>{
@@ -15,4 +15,4 @@ const DarkModeButtton = () => {
     )
 }
 
-export default DarkModeButtton
+export default DarkModeButton

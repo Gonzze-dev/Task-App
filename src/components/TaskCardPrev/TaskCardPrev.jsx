@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './TaskCardPrev.css'
 
-import crossSvg from './assets/cross.svg'
-import editSvg from './assets/edit.svg'
-import deleteSvg from './assets/delete.svg'
-import okSvg from './assets/ok-v2.svg'
-import { TaskContext } from './TaskProvider'
-import EditTaskForm from './EditTaskForm'
-import TaskCard from './TaskCard'
-import { DarkModeContext } from './DarkModeProvier'
+import crossSvg from '../../assets/cross.svg'
+import editSvg from '../../assets/edit.svg'
+import deleteSvg from '../../assets/delete.svg'
+import okSvg from '../../assets/ok-v2.svg'
+
+import { TaskContext } from '../../providers/TaskProvider'
+import EditTaskForm from '../TaskForm/EditTaskForm'
+import TaskCard from '../TaskCard/TaskCard'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const changeCheckTaskSvg = (checkTask) => checkTask ? okSvg : crossSvg
 const changeCheckTaskAlt = (checkTask) => checkTask ? 'task done button' : 'task undone button'

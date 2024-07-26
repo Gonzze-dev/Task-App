@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './TaskForm.css'
-import { TaskContext } from './TaskProvider'
-import { DarkModeContext } from './DarkModeProvier'
+import { TaskContext } from '../../providers/TaskProvider'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const EditTaskForm = ({id, showEditForm, setShowEditForm}) => {
     const {task, setTask} = useContext(TaskContext)

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {TaskContext} from './TaskProvider'
+import {TaskContext} from '../../providers/TaskProvider'
 import './TaskCard.css'
-import { DarkModeContext } from './DarkModeProvier'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const TaskCard = ({id, showTaskData, setShowTaskData}) => {
     const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)

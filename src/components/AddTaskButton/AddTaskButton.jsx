@@ -1,9 +1,9 @@
 import React, { useContext, useRef, useState } from 'react'
 import './AddTaskButton.css'
 
-import { TaskContext } from './TaskProvider'
-import AddTaskForm from './AddTaskForm'
-import { DarkModeContext } from './DarkModeProvier'
+import { TaskContext } from '../../providers/TaskProvider'
+import AddTaskForm from '../TaskForm/AddTaskForm'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const AddTaskButton = () => {
   const {task, setTask} = useContext(TaskContext)

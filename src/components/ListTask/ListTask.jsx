@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import './ListTask.css'
 
-import TaskCardPrev from './TaskCardPrev'
-import AddTaskButton from './AddTaskButton'
-import { TaskContext } from './TaskProvider'
-import { DarkModeContext } from './DarkModeProvier'
+import TaskCardPrev from '../TaskCardPrev/TaskCardPrev'
+import AddTaskButton from '../AddTaskButton/AddTaskButton'
+import { TaskContext } from '../../providers/TaskProvider'
+import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const ListTask = () => {
   const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
