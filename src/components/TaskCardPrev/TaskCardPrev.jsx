@@ -23,7 +23,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     const {task, setTask} = useContext(TaskContext)
     const [showForm, setShowForm] = useState(false)
     const [showTaskData, setShowTaskData] = useState(false)
-  
+
     const hanlderCheckTask = () =>
     {
       const changeStateCheckTask = !checkTask
@@ -35,34 +35,45 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
     const deleteTask = () =>
     {
-        const newTasks = [...task];
-        newTasks.splice(id, 1);
+      const newTasks = [...task];
+        
+      const index = newTasks.findIndex(task => task.id === id);
+      
+      if (index !== -1)
+      {
+        newTasks.splice(index, 1);
         setTask(newTasks)
+      }
     }
 
-    const handlerShowForm = () => setShowForm(true)
-    const handlerShowTaskData = () => setShowTaskData(true)
+    const handlerShowForm = () =>{
+      setShowForm(true)
+    }
+
+    const handlerShowTaskData = () => {
+      setShowTaskData(true)
+    }
 
     return (
       <>
         <div className = {`TaskCardPrevContainer${colorMode}`}>
-                <p className='TaskCardPrevTitle' onClick={handlerShowTaskData}>{title}</p>
+              <p className='TaskCardPrevTitle' onClick={handlerShowTaskData}>{title}</p>
 
-                <div className='TaskCardPrev-ButtonList'>
-                    <img className='TaskCardPrev-ButtonList-Button' 
-                    src={checkTaskSvg} alt={checkTaskAlt} width={18} height={18} onClick={hanlderCheckTask}/>
-                    
-                    <img className='TaskCardPrev-ButtonList-Button'
-                    src={editSvg} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
+              <div className='TaskCardPrev-ButtonList'>
+                  <img className='TaskCardPrev-ButtonList-Button' 
+                  src={checkTaskSvg} alt={checkTaskAlt} width={18} height={18} onClick={hanlderCheckTask}/>
+                  
+                  <img className='TaskCardPrev-ButtonList-Button'
+                  src={editSvg} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
 
-                    <img className='TaskCardPrev-ButtonList-Button'
-                    src={deleteSvg} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
-                </div>
-          </div>
+                  <img className='TaskCardPrev-ButtonList-Button'
+                  src={deleteSvg} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
+              </div>
+        </div>
+
         <TaskCard id={id} showTaskData={showTaskData} setShowTaskData={setShowTaskData}/>
         <EditTaskForm id={id} showEditForm={showForm} setShowEditForm={setShowForm}/>
       </>
-        
     )
 }
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './ListTask.css'
 
 import TaskCardPrev from '../TaskCardPrev/TaskCardPrev'
@@ -10,17 +10,35 @@ const ListTask = () => {
   const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
 
   const {task, setTask} = useContext(TaskContext)
+  const [search, setSearch ]= useState(task)
+
+  useEffect(() => {
+    setSearch(task)
+    console.log(search)
+  }, [task])
+
+  const searchByTitle = (e) => {
+    const searchValue = e.target.value
+    const regex = new RegExp(searchValue, 'i');
+
+    const searchResult = task.filter(objTask => regex.test(objTask.title))
+    setSearch(searchResult)
+   }
 
   return (
+    <>
+    <input type="text" placeholder='buscar tarea' onChange={searchByTitle}/>
     <div className={`listTaskContainer${colorMode}`}>
       <AddTaskButton/>
-      {task.map(({title, description, isDone}, index) => 
+      {search.map(({id, title, description, isDone}) => 
         <TaskCardPrev
-        key={index}
-        id={index}
+        key={id}
+        id={id}
         title={title}
         taskDone={isDone}/>)}
     </div>
+    </>
+   
   )
 }
 

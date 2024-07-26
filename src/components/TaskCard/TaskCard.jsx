@@ -2,17 +2,21 @@ import React, { useContext, useEffect, useState } from 'react'
 import {TaskContext} from '../../providers/TaskProvider'
 import './TaskCard.css'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
+import { findById } from '../../utilities/findById'
 
 const TaskCard = ({id, showTaskData, setShowTaskData}) => {
     const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
+
     const {task, setTask} = useContext(TaskContext)
-    const {title, description} = task[id]
+
+    const findResult = findById(task, )
+    const {title, description} = findResult
+
     const [showForm, setShowForm] = useState(showTaskData)
-        
+
     useEffect(() =>
     {
         setShowForm(showTaskData)
-
     }, [showTaskData])
 
     const hideForm = () => setShowTaskData(false)

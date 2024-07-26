@@ -12,10 +12,10 @@ const AddTaskForm = ({showAddForm, setShowAddForm}) => {
 
   const [showForm, setShowForm] = useState(showAddForm)
     
-    useEffect(() =>
-    {
-        setShowForm(showAddForm)
-    }, [showAddForm])
+  useEffect(() =>
+  {
+      setShowForm(showAddForm)
+  }, [showAddForm])
 
   const handlerTitle = (e) => {
     setTitle(e.target.value)
@@ -26,7 +26,9 @@ const AddTaskForm = ({showAddForm, setShowAddForm}) => {
   }
 
   const addTask = () => {
+    const id = task.length + 1
     const objTask = {
+      id: id,
       title: title,
       description: description,
       isDone: false

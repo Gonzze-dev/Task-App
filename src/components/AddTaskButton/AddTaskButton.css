@@ -6,11 +6,14 @@
     align-items: center;
     width: 338px;
     border: 2px dashed  black;
+    background-color: transparent;
+    color: black;
     transition: height 0.5s ease, border-color 0.3s, background-color ease 1s;
     cursor: pointer;
 }
 
 .AddTaskButton-dark{
+    color: white;
     border: 2px dashed  rgb(253, 253, 253);
 }
 
