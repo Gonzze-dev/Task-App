@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import './DarkModeButton.css'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
 
 const DarkModeButton = () => {
@@ -9,8 +10,7 @@ const DarkModeButton = () => {
     }
 
     return (
-        <button className='DarkModeButton' onClick={handlerSetDarkMode}>
-            darkMode
+        <button className={`DarkModeButton${colorMode}`} onClick={handlerSetDarkMode}>
         </button>
     )
 }

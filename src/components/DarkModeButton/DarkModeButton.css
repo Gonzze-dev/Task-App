@@ -1,0 +1,25 @@
+.DarkModeButton, .DarkModeButton-dark {
+    background-image: url('./../../assets/sun.svg');
+    background-size: 37px 37px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    transition: background-image 0.5s linear;
+    margin-top: 10px;
+}
+
+.DarkModeButton-dark
+{
+    background-image: url('./../../assets/moon.svg')
+}
+
+.DarkModeButton:hover, .DarkModeButton-dark:hover
+{
+    margin-left: 3px;
+    transform: scale(1.09);
+}

@@ -5,7 +5,8 @@ import './App.css'
 import ListTask from './components/ListTask/ListTask'
 import { TaskProvider } from './providers/TaskProvider'
 import { DarkModeProvier } from './providers/DarkModeProvier'
-import DarkModeButton from './components/DarkModeButton/DarkModeButton'
+
+import TitleApp from './components/TitleApp/TitleApp'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
     <>
       <DarkModeProvier>
         <TaskProvider>
-          <DarkModeButton/>
+          <TitleApp/>
           <ListTask/>
         </TaskProvider>
       </DarkModeProvier>
