@@ -6,6 +6,7 @@ body
     font-family: 'Roboto', sans-serif;
     background-color: azure;
     height: 100vh;
+    transition: background-color ease 1s;
 }
 
 .dark
