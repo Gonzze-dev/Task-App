@@ -9,7 +9,7 @@ const EditTaskForm = ({id, showEditForm, setShowEditForm}) => {
     const {task, setTask} = useContext(TaskContext)
     const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
     
-    const findResult = findById(task)
+    const findResult = findById(task, id)
 
     const {id: idTask,
             title: titleTask, 

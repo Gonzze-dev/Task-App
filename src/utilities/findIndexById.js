@@ -1,6 +1,5 @@
 export const findIndexById = (arr, id) =>{
-    let findResult = arr.find(e => e.id === id)
-    findResult = findResult || -1
+    const findResult = arr.findIndex(obj => obj.id === id)
     
     return findResult
 }

@@ -30,9 +30,9 @@ const ListTask = () => {
     <input type="text" placeholder='buscar tarea' onChange={searchByTitle}/>
     <div className={`listTaskContainer${colorMode}`}>
       <AddTaskButton/>
-      {search.map(({id, title, description, isDone}) => 
+      {search.map(({id, title, description, isDone}, index) => 
         <TaskCardPrev
-        key={id}
+        key={index}
         id={id}
         title={title}
         taskDone={isDone}/>)}
