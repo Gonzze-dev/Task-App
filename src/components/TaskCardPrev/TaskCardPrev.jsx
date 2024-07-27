@@ -10,6 +10,8 @@ import { TaskContext } from '../../providers/TaskProvider'
 import EditTaskForm from '../TaskForm/EditTaskForm'
 import TaskCard from '../TaskCard/TaskCard'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
+import { findIndexById } from '../../utilities/findIndexById'
+import { findById } from '../../utilities/findById'
 
 const changeCheckTaskSvg = (checkTask) => checkTask ? okSvg : crossSvg
 const changeCheckTaskAlt = (checkTask) => checkTask ? 'task done button' : 'task undone button'
@@ -27,7 +29,16 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     const hanlderCheckTask = () =>
     {
       const changeStateCheckTask = !checkTask
+      const newTask = [...task];
+        
+      const index = findIndexById(newTask, id);
+      const objTask = newTask[index]
 
+      objTask.isDone = !objTask.isDone
+
+      newTask[index]  = objTask
+
+      setTask([...newTask])
       setCheckTask(changeStateCheckTask)
       setCheckTaskSvg(changeCheckTaskSvg(changeStateCheckTask))
       setCheckTaskAlt(changeCheckTaskAlt(changeStateCheckTask))
@@ -37,7 +48,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     {
       const newTasks = [...task];
         
-      const index = newTasks.findIndex(task => task.id === id);
+      const index = findIndexById(newTasks);
       
       if (index !== -1)
       {
