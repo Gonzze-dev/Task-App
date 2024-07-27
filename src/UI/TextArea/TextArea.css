@@ -1,0 +1,50 @@
+
+#TextAreaUI, #TextAreaUI-dark
+{
+    border: none;
+    width: 195px;
+    outline: 2px solid rgb(235, 235, 235);
+    font-size: 16px;
+    padding: 10px;
+}
+
+#TextAreaUI-dark
+{
+    outline: 2px solid #adadad;
+}
+
+#TextAreaUI:hover, #TextAreaUI-dark:hover
+{
+    outline: 2px solid #5b9bee;
+    transition: outline 0.3s ease;
+}
+
+#TextAreaUI:focus, #TextAreaUI-dark:focus
+{
+    outline: 2px solid #176cdc;
+    transition: outline 0.3s ease;
+}
+
+
+
+#TextAreaUI::-webkit-scrollbar, #TextAreaUI-dark::-webkit-scrollbar {
+    width: 2px;
+}
+
+#TextAreaUI::-webkit-scrollbar-thumb, #TextAreaUI-dark::-webkit-scrollbar-thumb {
+    background-color: #5b9bee;
+    border-radius: 6px;
+}
+
+#TextAreaUI::-webkit-scrollbar-track, #TextAreaUI-dark::-webkit-scrollbar-track{
+    background-color: white;
+    border-radius: 6px;
+}
+
+#TextAreaUI-dark::-webkit-scrollbar-track{
+    background-color: #414141;
+}
+
+#TextAreaUI::-webkit-scrollbar-thumb:hover, #TextAreaUI-dark::-webkit-scrollbar-thumb:hover {
+    background-color: #176cdc;
+}

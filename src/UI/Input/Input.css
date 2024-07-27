@@ -1,0 +1,25 @@
+#InputUI, #InputUI-dark
+{
+    border: none;
+    width: 195px;
+    outline: 2px solid rgb(235, 235, 235);
+    font-size: 16px;
+    padding: 10px;
+}
+
+#InputUI-dark, .TextAreaTaskDescription-dark
+{
+    outline: 2px solid #adadad;
+}
+
+#InputUI:hover, #InputUI-dark:hover
+{
+    outline: 2px solid #5b9bee;
+    transition: outline 0.3s ease;
+}
+
+#InputUI:focus, #InputUI-dark:hover
+{
+    outline: 2px solid #176cdc;
+    transition: outline 0.3s ease;
+}

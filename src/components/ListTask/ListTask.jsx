@@ -5,6 +5,7 @@ import TaskCardPrev from '../TaskCardPrev/TaskCardPrev'
 import AddTaskButton from '../AddTaskButton/AddTaskButton'
 import { TaskContext } from '../../providers/TaskProvider'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
+import Input from '../../UI/Input/Input'
 
 const ListTask = () => {
   const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
@@ -27,16 +28,19 @@ const ListTask = () => {
 
   return (
     <>
-    <input type="text" placeholder='buscar tarea' onChange={searchByTitle}/>
-    <div className={`listTaskContainer${colorMode}`}>
-      <AddTaskButton/>
-      {search.map(({id, title, description, isDone}, index) => 
-        <TaskCardPrev
-        key={index}
-        id={id}
-        title={title}
-        taskDone={isDone}/>)}
+    <div className='TaskContainer'>
+      <Input className={`InputSearch${colorMode}`} type="text" placeholder='buscar tarea' onChange={searchByTitle}/>
+      <div className={`listTaskContainer${colorMode}`}>
+        <AddTaskButton/>
+        {search.map(({id, title, description, isDone}, index) => 
+          <TaskCardPrev
+          key={index}
+          id={id}
+          title={title}
+          taskDone={isDone}/>)}
+      </div>
     </div>
+    
     </>
    
   )

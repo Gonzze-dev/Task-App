@@ -9,7 +9,7 @@ const TaskCard = ({id, showTaskData, setShowTaskData}) => {
 
     const {task, setTask} = useContext(TaskContext)
 
-    const findResult = findById(task, )
+    const findResult = findById(task, id)
     const {title, description} = findResult
 
     const [showForm, setShowForm] = useState(showTaskData)
