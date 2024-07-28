@@ -3,7 +3,7 @@ import './Input.css'
 
 import { DarkModeContext } from '../../providers/DarkModeProvier'
 
-function Input({...props}) {
+const Input = ({...props}) =>{
   const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
 
   return (
