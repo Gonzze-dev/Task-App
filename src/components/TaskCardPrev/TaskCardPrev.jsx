@@ -48,7 +48,7 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     {
       const newTasks = [...task];
         
-      const index = findIndexById(newTasks);
+      const index = findIndexById(newTasks, id);
       
       if (index !== -1)
       {

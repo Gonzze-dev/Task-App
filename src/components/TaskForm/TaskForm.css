@@ -33,19 +33,17 @@
 .TaskFormContainer-dark{
     background-color: #1C1C1C;
 }
-.inputTaskTitle, .inputTaskTitle-dark
-.TextAreaTaskDescription, .TextAreaTaskDescription-dark
-{
-    width: 195px;
-}
 
-.inputTaskTitle, .inputTaskTitle-dark, 
+.inputTaskTitle, .inputTaskTitle-dark,
 .TextAreaTaskDescription, .TextAreaTaskDescription-dark
 {
     margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.TextAreaTaskDescription, .TextAreaTaskDescription-dark{
+.TextAreaTaskDescription, .TextAreaTaskDescription-dark
+{
     height: 100px;
     resize: none;
 }
