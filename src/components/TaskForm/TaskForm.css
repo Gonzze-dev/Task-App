@@ -33,7 +33,11 @@
 .TaskFormContainer-dark{
     background-color: #1C1C1C;
 }
-
+.inputTaskTitle, .inputTaskTitle-dark
+.TextAreaTaskDescription, .TextAreaTaskDescription-dark
+{
+    width: 195px;
+}
 
 .inputTaskTitle, .inputTaskTitle-dark, 
 .TextAreaTaskDescription, .TextAreaTaskDescription-dark

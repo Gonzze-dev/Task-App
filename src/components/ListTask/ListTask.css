@@ -1,6 +1,12 @@
+.TaskContainer
+{
+    width: 388px;
+}
+
 .InputSearch, .InputSearch-dark
 {
-    width: 900px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .listTaskContainer, .listTaskContainer-dark

@@ -1,31 +1,28 @@
 
 #TextAreaUI, #TextAreaUI-dark
 {
-    border: none;
-    width: 195px;
-    outline: 2px solid rgb(235, 235, 235);
+    outline: none;
+    border: 2px solid rgb(235, 235, 235);
     font-size: 16px;
     padding: 10px;
 }
 
 #TextAreaUI-dark
 {
-    outline: 2px solid #adadad;
+    border: 2px solid #adadad;
 }
 
 #TextAreaUI:hover, #TextAreaUI-dark:hover
 {
-    outline: 2px solid #5b9bee;
-    transition: outline 0.3s ease;
+    border: 2px solid #5b9bee;
+    transition: border 0.3s ease;
 }
 
 #TextAreaUI:focus, #TextAreaUI-dark:focus
 {
-    outline: 2px solid #176cdc;
-    transition: outline 0.3s ease;
+    border: 2px solid #176cdc;
+    transition: border 0.3s ease;
 }
-
-
 
 #TextAreaUI::-webkit-scrollbar, #TextAreaUI-dark::-webkit-scrollbar {
     width: 2px;
