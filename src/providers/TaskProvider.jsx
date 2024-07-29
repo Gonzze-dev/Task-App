@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-import { tasks } from '../task'
 import { useLocalStorage } from '../custom-hooks/useLocalStorage'
 
 const TaskContext = createContext()
