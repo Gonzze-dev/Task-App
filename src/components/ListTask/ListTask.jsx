@@ -22,7 +22,6 @@ const ListTask = () => {
 
   useEffect(() => {
     setSearch(task)
-    console.log(search)
   }, [task])
 
   const searchByTitle = (e) => {
