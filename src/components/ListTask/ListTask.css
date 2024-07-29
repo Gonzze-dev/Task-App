@@ -3,11 +3,6 @@
     width: 388px;
 }
 
-.InputSearch, .InputSearch-dark
-{
-    width: 100%;
-    box-sizing: border-box;
-}
 
 .listTaskContainer, .listTaskContainer-dark
 {

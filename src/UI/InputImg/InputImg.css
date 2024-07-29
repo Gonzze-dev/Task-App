@@ -1,0 +1,51 @@
+
+#InpuImgtUI-Container, #InpuImgtUI-Container-dark
+{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid rgb(235, 235, 235);
+    transition: border 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#InpuImgtUI-Container
+{
+    background-color: white;
+}
+
+#InpuImgtUI-Container-dark
+{
+    border: 2px solid #adadad;
+}
+
+#InpuImgtUI-Container:hover, #InpuImgtUI-Container-dark:hover
+{
+    border: 2px solid #5b9bee;
+}
+
+#InpuImgtUI-Container:focus-within, #InpuImgtUI-Container-dark:focus-within
+{
+    border: 2px solid #176cdc;
+}
+
+#InpuImgtUI-Img{
+    width: 16px;
+    height: 16px;
+}
+
+#InpuImgtUI-Input, #InpuImgtUI-Input-dark
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: white solid 2px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+

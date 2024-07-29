@@ -6,8 +6,14 @@ import TaskCardPrev from '../TaskCardPrev/TaskCardPrev'
 import AddTaskButton from '../AddTaskButton/AddTaskButton'
 import { TaskContext } from '../../providers/TaskProvider'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
+import searchSVG from '../../assets/search.svg'
+import searchDarkSVG from '../../assets/search-dark.svg'
+import InputImg from '../../UI/InputImg/InputImg'
 
-
+const objImg = {
+  'search': searchSVG,
+  'search-dark': searchDarkSVG
+}
 const ListTask = () => {
   const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
 
@@ -30,7 +36,10 @@ const ListTask = () => {
   return (
     <>
     <div className='TaskContainer'>
-      <Input className={`InputSearch${colorMode}`} type="text" placeholder='buscar tarea' onChange={searchByTitle}/>
+
+      <InputImg className={`InputSearch`} src={objImg['search'+colorMode]} alt={searchSVG} 
+      type="text" placeholder={`Buscar tarea`} onChange={searchByTitle}/>  
+
       <div className={`listTaskContainer${colorMode}`}>
         <AddTaskButton/>
         {search.map(({id, title, description, isDone}, index) => 

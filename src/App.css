@@ -25,7 +25,8 @@ body
 }
 
 .dark input,
-.dark textarea
+.dark textarea,
+#InpuImgtUI-Container-dark
 {
     background-color: #414141;
     color: rgb(253, 253, 253);

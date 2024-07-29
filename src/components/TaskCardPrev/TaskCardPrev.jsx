@@ -1,26 +1,40 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './TaskCardPrev.css'
 
-import crossSvg from '../../assets/cross.svg'
+import unCheck from '../../assets/unCheck.svg'
 import editSvg from '../../assets/edit.svg'
 import deleteSvg from '../../assets/delete.svg'
-import okSvg from '../../assets/ok-v2.svg'
+import check from '../../assets/check.svg'
+
+import unCheckDark from '../../assets/unCheck-dark.svg'
+import editSvgDark from '../../assets/edit-dark.svg'
+import deleteSvgDark from '../../assets/delete-dark.svg'
+import checkDark from '../../assets/check-dark.svg'
 
 import { TaskContext } from '../../providers/TaskProvider'
 import EditTaskForm from '../TaskForm/EditTaskForm'
 import TaskCard from '../TaskCard/TaskCard'
 import { DarkModeContext } from '../../providers/DarkModeProvier'
 import { findIndexById } from '../../utilities/findIndexById'
-import { findById } from '../../utilities/findById'
 
-const changeCheckTaskSvg = (checkTask) => checkTask ? okSvg : crossSvg
+const changeCheckTaskSvg = (checkTask) => checkTask ? 'check': 'unCheck'
 const changeCheckTaskAlt = (checkTask) => checkTask ? 'task done button' : 'task undone button'
+
+const objImg = {
+  'check': check,
+  'unCheck': unCheck,
+  'editSvg': editSvg,
+  'deleteSvg': deleteSvg,
+  'check-dark': checkDark,
+  'unCheck-dark': unCheckDark,
+  'editSvg-dark': editSvgDark,
+  'deleteSvg-dark': deleteSvgDark
+}
 
 const TaskCardPrev = ({id, title = "", taskDone=false}) => {
     const {isDark, setIsDark, colorMode, setColorMode} = useContext(DarkModeContext)
-
+    
     const [checkTask, setCheckTask] = useState(taskDone)
-    const [checkTaskSvg, setCheckTaskSvg] = useState(changeCheckTaskSvg(taskDone))
     const [checkTaskAlt, setCheckTaskAlt] = useState(changeCheckTaskAlt(taskDone))
     const {task, setTask} = useContext(TaskContext)
     const [showForm, setShowForm] = useState(false)
@@ -72,13 +86,13 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
               <div className='TaskCardPrev-ButtonList'>
                   <img className='TaskCardPrev-ButtonList-Button' 
-                  src={checkTaskSvg} alt={checkTaskAlt} width={18} height={18} onClick={hanlderCheckTask}/>
+                  src={objImg[changeCheckTaskSvg(taskDone)+colorMode]} alt={checkTaskAlt} width={20} height={20} onClick={hanlderCheckTask}/>
                   
                   <img className='TaskCardPrev-ButtonList-Button'
-                  src={editSvg} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
+                  src={objImg[`editSvg${colorMode}`]} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
 
                   <img className='TaskCardPrev-ButtonList-Button'
-                  src={deleteSvg} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
+                  src={objImg[`deleteSvg${colorMode}`]} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
               </div>
         </div>
 
