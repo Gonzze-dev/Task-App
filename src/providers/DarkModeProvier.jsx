@@ -7,8 +7,8 @@ const DarkModeProvier = ({children}) => {
     const [colorMode, setColorMode] = useState('')
 
     useEffect(() => {
-        const mode = colorMode == '' ? '-dark' : ''
-        const modeBody = colorMode == '' ? "dark" : "ligth"
+        const mode = colorMode == '' ? '' : '-dark'
+        const modeBody = colorMode == '' ? 'ligth' : 'dark'
         
         document.getElementById('body').className = modeBody
         setColorMode(mode)
