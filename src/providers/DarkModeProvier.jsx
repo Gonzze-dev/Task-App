@@ -1,14 +1,15 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { useLocalStorage } from '../custom-hooks/useLocalStorage'
 
 const DarkModeContext = createContext()
 
 const DarkModeProvier = ({children}) => {
-    const [isDark, setIsDark] = useState(false)
+    const [isDark, setIsDark] = useLocalStorage('theme', false)
     const [colorMode, setColorMode] = useState('')
 
     useEffect(() => {
-        const mode = colorMode == '' ? '' : '-dark'
-        const modeBody = colorMode == '' ? 'ligth' : 'dark'
+        const mode = isDark == false ? '' : '-dark'
+        const modeBody = isDark == false ? 'ligth' : 'dark'
         
         document.getElementById('body').className = modeBody
         setColorMode(mode)
