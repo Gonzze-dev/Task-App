@@ -81,12 +81,20 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
     return (
       <>
-        <div className = {`TaskCardPrevContainer${colorMode}`}>
-              <p className='TaskCardPrevTitle' onClick={handlerShowTaskData}>{title}</p>
+        <div className = {`TaskCardPrevContainer${colorMode}`} >
+
+              <div className='TaskCardPrevContainer-title' onClick={handlerShowTaskData}>
+                <p className='TaskCardPrevTitle' >{title}</p>
+              </div>
 
               <div className='TaskCardPrev-ButtonList'>
                   <img className='TaskCardPrev-ButtonList-Button' 
-                  src={objImg[changeCheckTaskSvg(taskDone)+colorMode]} alt={checkTaskAlt} width={20} height={20} onClick={hanlderCheckTask}/>
+                  src={objImg[changeCheckTaskSvg(taskDone)+colorMode]} 
+                  alt={checkTaskAlt}
+                  width={20}
+                  height={20}
+                  onClick={hanlderCheckTask}
+                  />
                   
                   <img className='TaskCardPrev-ButtonList-Button'
                   src={objImg[`editSvg${colorMode}`]} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
