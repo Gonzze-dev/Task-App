@@ -5,6 +5,9 @@
     justify-content: space-between;
     background-color: rgb(253, 253, 253);
     margin-top: 10px;
+    height: 50px;
+    width: 300px;
+    padding: 5px 21px 5px 21px;
     
     cursor: pointer;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -25,27 +28,14 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
 }
 
-.TaskCardPrevContainer-title
-{
-    background-color: transparent;
-    height: 50px;
-    width: 300px;
-    padding: 5px 21px 5px 21px;
-}
 
 .TaskCardPrev-ButtonList
 {
-    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 20px;
     width: 80px;
-    top: 20px;
-    bottom: 0;
-    left: 242px;
-    right: 0;
 }
 
 .TaskCardPrev-ButtonList-Button:hover

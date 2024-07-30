@@ -54,7 +54,6 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
       setTask([...newTask])
       setCheckTask(changeStateCheckTask)
-      setCheckTaskSvg(changeCheckTaskSvg(changeStateCheckTask))
       setCheckTaskAlt(changeCheckTaskAlt(changeStateCheckTask))
     }
 
@@ -81,11 +80,8 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
 
     return (
       <>
-        <div className = {`TaskCardPrevContainer${colorMode}`} >
-
-              <div className='TaskCardPrevContainer-title' onClick={handlerShowTaskData}>
-                <p className='TaskCardPrevTitle' >{title}</p>
-              </div>
+        <div className = {`TaskCardPrevContainer${colorMode}`} onClick={handlerShowTaskData}>
+              <p className='TaskCardPrevTitle' >{title}</p>
 
               <div className='TaskCardPrev-ButtonList'>
                   <img className='TaskCardPrev-ButtonList-Button' 
@@ -93,14 +89,22 @@ const TaskCardPrev = ({id, title = "", taskDone=false}) => {
                   alt={checkTaskAlt}
                   width={20}
                   height={20}
-                  onClick={hanlderCheckTask}
+                  onClick={(e) => {e.stopPropagation(); hanlderCheckTask()}}
                   />
                   
                   <img className='TaskCardPrev-ButtonList-Button'
-                  src={objImg[`editSvg${colorMode}`]} alt={editSvg} width={20} height={20} onClick={handlerShowForm}/>
+                  src={objImg[`editSvg${colorMode}`]}
+                  alt={editSvg}
+                  width={20}
+                  height={20}
+                  onClick={(e) => {e.stopPropagation(); handlerShowForm()}}/>
 
                   <img className='TaskCardPrev-ButtonList-Button'
-                  src={objImg[`deleteSvg${colorMode}`]} alt={deleteSvg} width={20} height={20} onClick={deleteTask}/>
+                  src={objImg[`deleteSvg${colorMode}`]}
+                  alt={deleteSvg}
+                  width={20}
+                  height={20}
+                  onClick={(e) => {e.stopPropagation(); deleteTask()}}/>
               </div>
         </div>
 
