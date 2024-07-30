@@ -36,3 +36,21 @@ textarea
 {
     font-family: 'Roboto', sans-serif;
 }
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #5b9bee;
+    border-radius: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-radius: 6px;
+    background-color: #176cdc;
+}

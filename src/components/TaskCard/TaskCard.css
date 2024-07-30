@@ -12,19 +12,6 @@
     cursor: auto;
 }
 
-.TaskCard, .TaskCard-dark
-{
-    padding: 1px 10px 10px 10px;
-    width: 300px;
-    background-color: white;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.TaskCard-dark
-{
-    background-color: #1C1C1C;
-}
-
 .TitleBar
 {
     height: 30px;
@@ -41,6 +28,40 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.TaskCard-Content
+{
+    margin-top: 5px;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.TaskCard-Content h3
+{
+    margin: 5px 0px 5px 0px
+}
+
+.description
+{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-right: 5px;
+}
+
+.TaskCard, .TaskCard-dark
+{
+    padding: 1px 10px 10px 10px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.TaskCard-dark
+{
+    background-color: #1C1C1C;
+}
+
 
 .ExitButton{
     cursor: pointer;

@@ -30,10 +30,12 @@ const TaskCard = ({id, showTaskData, setShowTaskData}) => {
                         <h3 className='Title'>Informacion <span className='ExitButton' onClick={hideForm}>X</span></h3> 
                     </div>
                     <div className='TaskCard-Content'>
-                        <h3>{title} </h3>
+                        <h3>{title}</h3>
+
                         <p id='description' className='description'>
                             {description}
                         </p>
+       
                     </div>
                 </div>
             </div>
